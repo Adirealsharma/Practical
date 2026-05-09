@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/username/repository.git'
+                git 'https://github.com/Adirealsharma/Practical.git'
             }
         }
 
@@ -23,13 +23,13 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t cicd-demo .'
+                bat 'docker build -t cicd-demo .'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'docker run -d -p 8081:80 cicd-demo'
+                bat 'docker run -d -p 8081:80 cicd-demo'
             }
         }
     }
